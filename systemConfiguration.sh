@@ -25,6 +25,7 @@ echo "Installing NVM and Node 8"
 sleep 3
 echo
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
 nvm install 8.0.0
 nvm alias default node
 echo
