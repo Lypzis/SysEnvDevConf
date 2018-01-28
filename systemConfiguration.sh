@@ -26,6 +26,8 @@ sleep 3
 echo
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install 8.0.0
 nvm alias default node
 echo
@@ -34,6 +36,7 @@ echo
 echo "Installing Git"
 sleep 3
 apt-get -y install git-all
+git config --global push.default matching
 echo
 
 #Install Gulp
