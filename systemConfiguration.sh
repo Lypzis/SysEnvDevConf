@@ -16,7 +16,7 @@ sleep 3
 echo
 apt-get -y update
 apt-get -y upgrade
-dpkg --add-arch i386
+dpkg --add-architecture i386
 apt-get -y update
 echo
 
