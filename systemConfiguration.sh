@@ -5,14 +5,14 @@
 echo "Overall Configuration of the System"
 echo
 echo "You may cancel or wait for the initiation," 
-echo "it is not recomended to abort in"
-echo "the middle of the process"
+echo "it is not recomended to abort in the"
+echo "middle of the process"
 echo
-sleep 5
+sleep 10
 
 #Update the System
 echo "Updating the System"
-sleep 3
+sleep 5
 echo
 apt-get -y update
 apt-get -y upgrade
@@ -22,7 +22,7 @@ echo
 
 #Install Node 8
 echo "Installing NVM and Node 8"
-sleep 3
+sleep 5
 echo
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
@@ -34,20 +34,26 @@ echo
 
 #Install Git
 echo "Installing Git"
-sleep 3
+sleep 5
 apt-get -y install git-all
 git config --global push.default matching
 echo
 
 #Install Gulp
 echo "Installing Gulp"
-sleep 3
+sleep 5
 npm install gulp-cli -g
 echo
 
 #Install VSCode IDE
 echo "Installing VSCode"
-sleep 3
+sleep 5
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+apt-get update
+apt-get install code  
+apt-get install code-insiders
 echo
 
 #Install Java 8
