@@ -20,6 +20,11 @@ sudo dpkg --add-architecture i386
 sudo apt-get -y update
 echo
 
+#Installing Vim-Anthena
+echo "Installing VI syntax highlight" 
+sudo apt-get install vim-athena
+echo
+
 #Install Node 8
 echo "Installing NVM and Node 8"
 sleep 3
@@ -67,6 +72,25 @@ sudo apt-get -y update
 sudo apt-get install -y mongodb-org
 sudo service mongod start
 sudo systemctl enable mongod.service
+echo
+
+#Install Postman
+echo "Installing Postman"
+sleep 3
+sudo wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
+sudo tar -xzf postman.tar.gz -C /opt
+sudo rm postman.tar.gz 
+sudo ln -s /opt/Postman/Postman /usr/bin/postman
+cat > ~/.local/share/applications/postman.desktop <<EOL
+	[Desktop Entry]
+	Encoding=UTF-8
+	Name=Postman
+	Exec=postman
+	Icon=/opt/Postman/resources/app/assets/icon.png
+	Terminal=false
+	Type=Application
+	Categories=Development;
+EOL
 echo
 
 #Install VSCode IDE
