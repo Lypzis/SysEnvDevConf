@@ -29,7 +29,7 @@ echo
 echo "Installing NVM and Node 8"
 sleep 3
 echo
-sudo wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+sudo wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | sudo bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
