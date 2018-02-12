@@ -22,7 +22,7 @@ echo
 
 #Installing Vim-Anthena
 echo "Installing VI syntax highlight" 
-sudo apt-get install vim-athena
+sudo apt-get -y install vim-athena
 echo
 
 #Install Node 8
@@ -44,16 +44,25 @@ sleep 3
 sudo apt-get -y install git-all
 echo
 
-#Install Bower
-echo "Installing Bower"
+#Install Yarnpkg
+echo "Installing Yarn"
 sleep 3 
-sudo npm install -g bower
+sudo apt -y remove cmdtest
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get -y update && sudo apt-get -y install yarn
 echo
 
 #Install Gulp
 echo "Installing Gulp"
 sleep 3
 sudo npm install gulp-cli -g
+echo
+
+#Install Electron-Forge
+echo "Installing Electron-forge"
+sleep 3
+npm install -g electron-forge@5.0.0
 echo
 
 #Install Mozilla Firefox
@@ -92,26 +101,6 @@ cat > ~/.local/share/applications/postman.desktop <<EOL
 	Type=Application
 	Categories=Development;
 EOL
-echo
-
-#Install VSCode IDE
-echo "Installing VSCode"
-sleep 3
-echo
-
-#Install Java 8
-echo "Installing Java 8"
-sleep 3
-echo
-
-#Install TeamViewer 12
-echo "Installing TeamViewer"
-sleep 3
-echo
-
-#Install NetBeans
-echo "Installing NetBeans"
-sleep 3 
 echo
 
 echo "Set up Complete, enjoy coding around! :D"
