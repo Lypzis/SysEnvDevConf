@@ -2,13 +2,12 @@
 #Doc: This will install everything needed for a dev enviroment.
 #Author: Victor V. Piccoli
 
-echo "Overall Configuration of the System"
+echo "Overall Configuration of the System - Ubuntu and derivates"
 echo
-echo "You may cancel or wait for the initiation," 
-echo "it is not recomended to abort in"
-echo "the middle of the process"
+echo "You may cancel or wait for the star," 
+echo "it is not recomended to abort in the middle of the process"
 echo
-sleep 5
+sleep 7
 
 #Update the System
 echo "Updating the System"
@@ -56,13 +55,19 @@ echo
 #Install Gulp
 echo "Installing Gulp"
 sleep 3
-sudo npm install gulp-cli -g
+npm install gulp-cli -g
 echo
 
 #Install Electron-Forge
 echo "Installing Electron-forge"
 sleep 3
 npm install -g electron-forge@5.0.0
+echo
+
+#Install Yeoman
+echo "Installing Yeoman"
+sleep 3
+npm install -g yo
 echo
 
 #Install Mozilla Firefox
