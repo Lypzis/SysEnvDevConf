@@ -103,4 +103,37 @@ cat > ~/.local/share/applications/postman.desktop <<EOL
 EOL
 echo
 
+#System Updater
+echo "Generating systemUpdater.sh"
+sleep 3
+sudo touch systemUpdater.sh
+sudo chmod 755 systemUpdater.sh
+cat > sudo ./systemUpdater.sh << EOL
+#!/bin/bash
+#Author: Victor V. Piccoli
+#
+#Doc:
+#Update the System at Startup.
+#log ----> Regiter errors occurred.
+ 
+log=/home/victorpiccoli/Logs/systemUpdaterError.txt
+ 
+sudo apt-get -y autoclean 2> \$log
+sudo apt-get -y autoremove 2>> \$log
+sudo apt-get -y update 2>> \$log
+sudo apt-get -y upgrade 2>> \$log
+sudo apt-get -y dist-upgrade 2>> \$log
+ 
+echo >> \$log
+date >> \$log
+echo "Update Completed! :D" >> \$log
+EOL
+sudo mv ./systemUpdater.sh /etc/init.d/
+echo
+echo "Put this generated file to start in Crontab with:" 
+echo "sudo crontab -e"
+echo "@reboot /etc/init.d/systemUpdater.sh 2>&1 /dev/null"
+echo
+
+
 echo "Set up Complete, enjoy coding around! :D"
