@@ -4,7 +4,7 @@
 
 echo "Overall Configuration of the System - Ubuntu and derivates"
 echo
-echo "You may cancel or wait for the star," 
+echo "You may cancel or wait for the start," 
 echo "it is not recomended to abort in the middle of the process"
 echo
 sleep 7
@@ -96,6 +96,8 @@ sudo wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
 sudo tar -xzf postman.tar.gz -C /opt
 sudo rm postman.tar.gz 
 sudo ln -s /opt/Postman/Postman /usr/bin/postman
+echo "Inserting Postman to search(May work only in Ubuntu)"
+sleep 5
 cat > ~/.local/share/applications/postman.desktop <<EOL
 	[Desktop Entry]
 	Encoding=UTF-8
@@ -105,6 +107,17 @@ cat > ~/.local/share/applications/postman.desktop <<EOL
 	Terminal=false
 	Type=Application
 	Categories=Development;
+EOL
+echo "Inserting Postman to Desktop"
+cat > ~/Desktop/postman.desktop <<EOL
+        [Desktop Entry]
+        Encoding=UTF-8
+        Name=Postman
+        Exec=postman
+        Icon=/opt/Postman/resources/app/assets/icon.png
+        Terminal=false
+        Type=Application
+        Categories=Development;
 EOL
 echo
 
