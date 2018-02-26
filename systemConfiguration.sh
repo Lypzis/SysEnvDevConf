@@ -108,6 +108,12 @@ cat > ~/.local/share/applications/postman.desktop <<EOL
 EOL
 echo
 
+#Firewall GUFW
+echo "Installing Firewall Interface"
+sleep 3
+sudo apt-get install gufw
+echo
+
 #System Updater
 echo "Generating systemUpdater.sh"
 sleep 3
@@ -135,9 +141,8 @@ echo "Update Completed! :D" >> \$log
 EOL
 sudo mv ./systemUpdater.sh /etc/init.d/
 echo
-echo "Put this generated file to start in Crontab with:" 
-echo "sudo crontab -e"
-echo "@reboot /etc/init.d/systemUpdater.sh 2>&1 /dev/null"
+echo "Acess this file in: /etc/init.d/systemUpdater.sh"
+echo "whenever you want to update the system"
 echo
 
 
