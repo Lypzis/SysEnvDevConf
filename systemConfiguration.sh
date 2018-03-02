@@ -43,6 +43,12 @@ sleep 3
 sudo apt-get -y install git-all
 echo
 
+#Install Bower
+echo "Installing Bower"
+sleep 3
+npm install -g bower
+echo
+
 #Install Yarnpkg
 echo "Installing Yarn"
 sleep 3 
@@ -152,9 +158,8 @@ echo >> \$log
 date >> \$log
 echo "Update Completed! :D" >> \$log
 EOL
-sudo mv ./systemUpdater.sh /etc/init.d/
 echo
-echo "Acess this file in: /etc/init.d/systemUpdater.sh"
+echo "Acess this file in: ./systemUpdater.sh"
 echo "whenever you want to update the system"
 echo
 
