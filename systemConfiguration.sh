@@ -34,6 +34,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 sudo chmod -R 777 "$HOME/.nvm" 
 nvm install 8.0.0
+nvm install-latest-npm
 nvm install 6.0.0
 echo
 
