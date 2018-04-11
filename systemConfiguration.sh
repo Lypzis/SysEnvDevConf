@@ -145,7 +145,7 @@ cat > sudo ./systemUpdater.sh << EOL
 #
 #Doc:
 #Update the System at Startup.
-#log ----> Regiter errors occurred.
+#log ----> Register errors occurred.
  
 log=/home/victorpiccoli/Logs/systemUpdaterError.txt
  
