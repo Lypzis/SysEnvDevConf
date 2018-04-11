@@ -68,7 +68,7 @@ echo
 #Install Electron-Forge
 echo "Installing Electron-forge"
 sleep 3
-npm install -g electron-forge@5.0.0
+npm install -g electron-forge
 echo
 
 #Install Yeoman
