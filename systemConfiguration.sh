@@ -135,33 +135,11 @@ sudo apt-get install gufw
 echo
 
 #System Updater
-echo "Generating systemUpdater.sh"
+echo "Executing genericUpdater.sh"
 sleep 3
-sudo touch systemUpdater.sh
-sudo chmod 755 systemUpdater.sh
-cat > sudo ./systemUpdater.sh << EOL
-#!/bin/bash
-#Author: Victor V. Piccoli
-#
-#Doc:
-#Update the System at Startup.
-#log ----> Register errors occurred.
- 
-log=/home/victorpiccoli/Logs/systemUpdaterError.txt
- 
-sudo apt-get -y autoclean 2> \$log
-sudo apt-get -y autoremove 2>> \$log
-sudo apt-get -y update 2>> \$log
-sudo apt-get -y upgrade 2>> \$log
-sudo apt-get -y dist-upgrade 2>> \$log
- 
-echo >> \$log
-date >> \$log
-echo "Update Completed! :D" >> \$log
-EOL
-echo
-echo "Acess this file in: ./systemUpdater.sh"
-echo "whenever you want to update the system"
+sudo chmod 755 genericUpdater.sh
+sudo ./genericUpdater.sh
+echo "Update Completed! :D" 
 echo
 
 
