@@ -1,0 +1,154 @@
+Senha wifi: @celaradora2O!9
+###############################################
+
+PADRONIZAÇÃO DE MERGE REQUEST
+
+git checkout master
+git pull --ff-only upstream master
+git push origin master
+git checkout -b <CODIGO_ATIVIDADE_YOUTRACK>
+exemplo:
+git checkout -b EPMC-92
+
+Fazendo o Merge Request
+git add <ARQUIVOS_ALTERADOS>
+git commit -m "<COMENTARIOS DO MERGE REQUEST>"
+git pull --rebase upstream master
+git push origin <CODIGO_ATIVIDADE_YOUTRACK>
+
+Revert Changes to the previous commit:
+git clean --force && git reset --hard
+#################ECLIPSE#########################
+
+Ctrol+Shift+R # Procura arquino por nome
+
+######################Terminal Mint #############
+
+win <- ou -> #Deixa a tela dividida no meio
+ifconfig # Ipconfig mesma coisa
+pwd      # Mostra o diretorio atual
+ls       # Lista arquivos em uma pasta.
+ls -l    # Lista os arquivos em ordem em uma pasta.
+ls -lh   # Lista de forma mais detalhada
+ls -i    # Lista mostrando os ids das pastas
+./       # Referencia pro diretório atual. Ou iniciar um programa
+../      # Referencia pro diretório anterior.
+cd       # Mudar para um diretório.
+cd ~     # Vai para o inicio dos diretórios.
+sudo su  # Vai pro root
+whoami   # Mostra que usuário está
+date -d @numeroDoTimestamp #Converte um timestamp em data legivel.
+Sair do shell ctl-d
+Sair de paginador aperta Q
+mkdir nomedapasta # Cria uma pasta vazia
+touch nomearquivo # Cria um arquivo vazio
+echo "blabla"     # Reproduz ou salva texto em arquivos.
+echo $PATH        # Imprime conteudo de uam váriavel.
+htop     # Gerenciador de Processos
+chown - Para mudar o dono do arquivo.
+chmod - Para mudar permissoes de leitura e escrita.
+sudo chmod a+rwx /dev/kvm - Libera permissoes nessa pasta para o usuário.
+apt-get #Baixar programas e pacotes diretamente da internet
+dpkg   #Instalar programas executaveis
+dpkg -l                # Listar todos os pacotes instalados no sistema
+dpkg -i nomepacote.deb # Instalar um pacote
+dpkg -r nomepacote.deb # Desinstalar um pacote
+dpkg --contents nomedopacote # Mostra tudo que tem no pacote
+man dpkg # infos sobre o comando.
+sudo apt-get update    # Atualiza os repositórios do sistema
+sudo apt-get upgrate   # Atualiza os pacotes do sistema
+fg # Traz um processo pro foreground
+bg # Manda um processo pro background
+jobs # Mostra os processos aberto na instancia do terminal.
+kill %numero # Usar o comando kill direto em um indicie de processo.
+
+acessar servidor modec
+ssh ubuntu@appepmc.com.br
+sudo -i
+less /vidya/modec_polar/tomcat/logs/catalina.out
+
+######################Configuração psql##########
+ # admin as postgres user
+sudo -i # may not be needed
+su -l postgres
+psql
+ 
+ # admin as normal user (after creating db user with the same name)
+psql -d <database>
+ 
+ # usefull commands
+psql-> \l  # list dbs
+psql-> \dt # list tables
+psql-> \dg # list roles
+ 
+ # change user password
+ALTER USER user_name WITH PASSWORD 'new_password';
+
+ # create a new user
+CREATE ROLE guia LOGIN PASSWORD 'cntrlgf2';
+
+ # give user superuser
+ALTER USER myuser WITH SUPERUSER;
+ # rename existing database:
+ALTER DATABASE epmc RENAME TO epmc2;
+
+ # create database:
+createdb [name]
+
+ # delete database:
+dropdb [name]
+
+
+
+ # restore database from sql dump:
+psql epmc < initdb_epmc.sql
+
+#####################Comandos Git##############
+//Setar usuário
+git config --global user.name "Leonardo Comelli"
+
+//Setar email
+git config --global user.email leonardo@software-ltda.com.br
+
+//it will interactively let you add, skip, or split diff hunks.
+git add -p <file> 
+
+//Criar novo repositório local
+git init
+T
+//Verificar estado dos arquivos/diretórios
+git status
+
+//Remover arquivo
+git rm meu_arquivo.txt
+
+//Remover diretório
+git rm -r diretorio
+
+//Listar branches locais e remotas
+git branch ou git branch -a
+
+//Remover branch local
+git branch -d nomebranch
+
+//Resetar o ultimo commit
+git reset --soft HEAD~1
+
+//Stasha modificaçoes que eu nao queira mexer no momento
+git stash
+
+//Pega do bau as modificaçẽos que guardou
+git stash pop
+
+-- Como fazer um rebase
+git rebase master (branch)
+corrige os conflitos
+git rebase --continue
+
+
+https://github.com/joshnh/Git-Commands
+####################
+
+npm run dev
+tns run android --no-hmr
+
